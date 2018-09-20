@@ -19,6 +19,8 @@ set runtimepath^=~/.vim/bundle/nerdtree
 autocmd vimenter * NERDTreeToggle
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeShowHidden=1
+let g:NERDTreeShowIgnoredStatus = 1
 map <C-n> :NERDTreeToggle<CR>
 
 " Git support for nerdtree > https://github.com/Xuyuanp/nerdtree-git-plugin.git ~/.vim/bundle/nerdtree-git-plugin
