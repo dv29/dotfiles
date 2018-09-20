@@ -35,6 +35,7 @@ set runtimepath^=~/.vim/bundle/ale
 let g:ale_linters = {
 	\ 'javascript': ['eslint'],
 	\ }
+
 " snippets > git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
 set runtimepath^=~/.vim/bundle/ultisnips
 
@@ -53,4 +54,4 @@ set undodir=~/.vim/undo//
 set number
 set tabstop=2
 set list
-set listchars=eol:⏎,tab:··,trail:␠
+set listchars+=eol:¬,tab:··,trail:~,extends:>,precedes:<
