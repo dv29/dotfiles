@@ -35,6 +35,15 @@ set runtimepath^=~/.vim/bundle/ale
 let g:ale_linters = {
 	\ 'javascript': ['eslint'],
 	\ }
+" snippets > git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
+set runtimepath^=~/.vim/bundle/ultisnips
+
+" snippets > git clone https://github.com/honza/vim-snippets.git ~/.vim/bundle/vim-snippets
+set runtimepath^=~/.vim/bundle/vim-snippets
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
