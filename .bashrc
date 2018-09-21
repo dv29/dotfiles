@@ -16,6 +16,9 @@ declare -a packages=(
 	"https://github.com/SirVer/ultisnips.git"
 	"https://github.com/honza/vim-snippets.git"
 	"https://github.com/leafgarland/typescript-vim.git"
+	"https://github.com/vim-airline/vim-airline.git"
+	"https://github.com/vim-airline/vim-airline-themes.git"
+	"https://github.com/tpope/vim-commentary.git"
 	)
 
 for i in "${packages[@]}"
