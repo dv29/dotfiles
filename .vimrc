@@ -54,4 +54,4 @@ set undodir=~/.vim/undo//
 set number
 set tabstop=2
 set list
-set listchars=eol:⏎,tab:··,trail:␠
+set listchars+=eol:¬,tab:··,trail:~,extends:>,precedes:<
