@@ -56,5 +56,8 @@ set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 set number
 set tabstop=2
-set list
+" set list
+set nolist
 set listchars+=eol:¬,tab:··,trail:~,extends:>,precedes:<
+set hlsearch
+set shiftwidth=2
