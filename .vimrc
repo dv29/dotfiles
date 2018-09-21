@@ -51,13 +51,27 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/dotfiles/UltiSnips']
 
+" status bar > git clone https://github.com/vim-airline/vim-airline.git
+" ~/.vim/bundle/vim-airline
+set runtimepath^=~/.vim/bundle/vim-airline
+
+" status bar theam > git clone https://github.com/vim-airline/vim-airline-themes.git
+" ~/.vim/bundle/vim-ariline-themes
+set runtimepath^=~/.vim/bundle/vim-airline-themes
+let g:airline_theme='simple'
+
+" commenting > git clone https://github.com/tpope/vim-commentary.git
+" ~/.vim/bundle/vim-commentry
+set runtimepath^=~/.vim/bundle/vim-commentary
+
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 set number
 set tabstop=2
-" set list
-set nolist
-set listchars+=eol:¬,tab:··,trail:~,extends:>,precedes:<
+set list
+" set nolist
+set listchars+=eol:¬,tab:··,trail:~,extends:>,precedes:<,space:·
+set expandtab
 set hlsearch
 set shiftwidth=2
