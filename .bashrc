@@ -1,3 +1,12 @@
+# Install bash-git-prompt
+
+if [[ ! -f ~/.bash-git-prompt ]]; then
+  git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+fi
+
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
+
 alias gs="git status"
 alias ga="git add ."
 alias gcom="git commit -m"
