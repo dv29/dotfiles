@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 call plug#begin('~/.vim/bundle')
 
 " Plug 'vim-syntastic/syntastic'
@@ -71,7 +74,7 @@ set number
 set tabstop=2
 set list
 " set nolist
-set listchars+=eol:¬,tab:··,trail:~,extends:>,precedes:<,space:·
+set listchars+=eol:¬,tab:··,trail:~,extends:>,precedes:<,space:.
 set expandtab
 set hlsearch
 set shiftwidth=2

@@ -7,6 +7,12 @@ mkdir -p ~/.vim/undo
 
 echo "Vim paths created"
 
+# Installing plugin manager for vim 
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "Plugin manager for vim installed"
+
 declare -a packages=(
 	"https://github.com/ctrlpvim/ctrlp.vim.git"
 	"https://github.com/moll/vim-node.git"
