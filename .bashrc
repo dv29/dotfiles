@@ -1,44 +1,18 @@
-#!/bin/bash
+alias gs="git status"
+alias ga="git add ."
+alias gcom="git commit -m"
+alias gsh="git stash"
+alias gcm="git checkout master"
+alias gcnb="git checkout -b "
+alias gcb="git checkout "
+alias gd="git diff --cached"
+alias gk="gitk"
+alias grm="git rebase -i master" 
+alias gpl="git pull" 
+alias gpu="git push"
 
-# create tmp and backup folders for vim
-mkdir -p ~/.vim/backup
-mkdir -p ~/.vim/swap
-mkdir -p ~/.vim/undo
-
-echo "Vim paths created"
-
-# Installing plugin manager for vim 
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo "Plugin manager for vim installed"
-
-declare -a packages=(
-	"https://github.com/ctrlpvim/ctrlp.vim.git"
-	"https://github.com/moll/vim-node.git"
-	"https://github.com/scrooloose/nerdtree.git"
-	"https://github.com/pangloss/vim-javascript.git"
-	"https://github.com/w0rp/ale.git"
-	"https://github.com/SirVer/ultisnips.git"
-	"https://github.com/honza/vim-snippets.git"
-	"https://github.com/leafgarland/typescript-vim.git"
-	"https://github.com/vim-airline/vim-airline.git"
-	"https://github.com/vim-airline/vim-airline-themes.git"
-	"https://github.com/tpope/vim-commentary.git"
-	)
-
-for i in "${packages[@]}"
-do
-				last=${i##*/}
-				bare=${last%%.git}
-				test -e ~/.vim/bundle/"$bare" || git clone "$i" ~/.vim/bundle/"$bare"
-done
-
-echo "Vim packages installed"
-
-
-
-
-
-
+pushCurrentBranch() {
+	git push -u origin $(git rev-parse --abbrev-ref HEAD)
+}
+alias gpb=pushCurrentBranch
 
