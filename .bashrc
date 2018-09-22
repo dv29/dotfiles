@@ -1,6 +1,7 @@
 # Install bash-git-prompt
 
-if [[ ! -f ~/.bash-git-prompt ]]; then
+if [[ ! ~/.bash-git-prompt ]]; then
+  echo "dasdf"
   git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 fi
 
