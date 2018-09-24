@@ -27,6 +27,7 @@ alias gpu="git push"
 alias grm="git rebase -i origin/master"
 alias gd="git diff HEAD"
 alias gr="git reset"
+alias reinitpack="rm -rf node_modules/ package-lock.json && npm i"
 
 pushCurrentBranch() {
 	git push -u origin $(git rev-parse --abbrev-ref HEAD)
