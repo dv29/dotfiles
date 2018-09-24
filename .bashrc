@@ -1,7 +1,6 @@
 # Install bash-git-prompt
 
-if [[ ! ~/.bash-git-prompt ]]; then
-  echo "dasdf"
+if [[ ! -d ~/.bash-git-prompt ]]; then
   git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 fi
 
@@ -20,6 +19,9 @@ alias gk="gitk"
 alias grm="git rebase -i master" 
 alias gpl="git pull" 
 alias gpu="git push"
+alias grm="git rebase -i origin/master"
+alias gd="git diff HEAD"
+alias gr="git reset"
 
 pushCurrentBranch() {
 	git push -u origin $(git rev-parse --abbrev-ref HEAD)
