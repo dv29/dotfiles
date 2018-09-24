@@ -69,6 +69,10 @@ let g:airline_theme='simple'
 " ~/.vim/bundle/vim-commentry
 set runtimepath^=~/.vim/bundle/vim-commentary
 
+" tabline to show tab number > git clone
+" https://github.com/mkitt/tabline.vim.git ~/.vim/bundle/tabline.vim
+set runtimepath^=~/.vim/bundle/tabline.vim
+
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
@@ -80,3 +84,4 @@ set listchars+=eol:¬,tab:··,trail:~,extends:>,precedes:<,space:.
 set expandtab
 set hlsearch
 set shiftwidth=2
+set guitablabel=%N\ %f
