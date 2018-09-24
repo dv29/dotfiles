@@ -28,6 +28,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 let g:NERDTreeShowIgnoredStatus = 1
 map <C-n> :NERDTreeToggle<CR>
+" autoclose nerdtree if its last window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Git support for nerdtree > https://github.com/Xuyuanp/nerdtree-git-plugin.git ~/.vim/bundle/nerdtree-git-plugin
 set runtimepath^=~/.vim/bundle/nerdtree-git-plugin
