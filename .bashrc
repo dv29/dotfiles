@@ -30,7 +30,8 @@ alias gr="git reset"
 alias reinitpack="rm -rf node_modules/ package-lock.json && npm i"
 
 pushCurrentBranch() {
-	git push -u origin $(git rev-parse --abbrev-ref HEAD)
+  git push -u origin $(git rev-parse --abbrev-ref HEAD)
 }
 alias gpb=pushCurrentBranch
 
+alias nrb="npm run build"
