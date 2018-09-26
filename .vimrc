@@ -41,8 +41,8 @@ set runtimepath^=~/.vim/bundle/vim-javascript
 " ALE / Linting > git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
 set runtimepath^=~/.vim/bundle/ale
 let g:ale_linters = {
-  \ 'javascript': ['eslint'],
-  \ }
+	\ 'javascript': ['eslint'],
+	\ }
 
 " snippets > git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
 set runtimepath^=~/.vim/bundle/ultisnips
@@ -81,10 +81,14 @@ set tabstop=2
 set list
 " set nolist
 set listchars+=eol:¬,tab:»»,trail:~,extends:>,precedes:<,space:·
-set expandtab
+" set expandtab
 set hlsearch
 set shiftwidth=2
 set guitablabel=%N\ %f
 set autoread
+set backspace=eol,indent,start
 hi SpecialKey ctermfg=DarkGrey
 hi NonText ctermfg=DarkGrey
+
+" Custom mappings
+nmap ef :ALEFix eslint<CR>¬
