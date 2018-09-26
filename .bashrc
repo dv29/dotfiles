@@ -34,3 +34,4 @@ pushCurrentBranch() {
 }
 alias gpb=pushCurrentBranch
 
+alias nrb="npm run build"
