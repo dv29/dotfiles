@@ -4,10 +4,10 @@ if [[ ! -d ~/.bash-git-prompt ]]; then
   git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 fi
 
-if [[ ! -d ~/.bash_it ]]; then
-  git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-  . ~/.bash_it/install.sh
-fi
+# if [[ ! -d ~/.bash_it ]]; then
+#   git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+#   . ~/.bash_it/install.sh
+# fi
 
 if [[ ! -d ~/.vim ]]; then
   echo "Initializing vim configurations"
@@ -16,6 +16,22 @@ fi
 
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 alias gs="git status"
 alias ga="git add ."
