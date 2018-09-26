@@ -4,6 +4,11 @@ if [[ ! -d ~/.bash-git-prompt ]]; then
   git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 fi
 
+if [[ ! -d ~/.bash_it ]]; then
+  git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+  . ~/.bash_it/install.sh
+fi
+
 if [[ ! -d ~/.vim ]]; then
   echo "Initializing vim configurations"
   source ~/dotfiles/.init_vim.sh
