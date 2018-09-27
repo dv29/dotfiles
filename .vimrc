@@ -41,8 +41,8 @@ set runtimepath^=~/.vim/bundle/vim-javascript
 " ALE / Linting > git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
 set runtimepath^=~/.vim/bundle/ale
 let g:ale_linters = {
-  \ 'javascript': ['eslint'],
-  \ }
+	\ 'javascript': ['eslint'],
+	\ }
 
 " snippets > git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
 set runtimepath^=~/.vim/bundle/ultisnips
