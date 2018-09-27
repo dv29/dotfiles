@@ -86,5 +86,9 @@ set hlsearch
 set shiftwidth=2
 set guitablabel=%N\ %f
 set autoread
+set backspace=eol,indent,start
 hi SpecialKey ctermfg=DarkGrey
 hi NonText ctermfg=DarkGrey
+
+" Custom mappings
+nmap ef :ALEFix eslint<CR>¬
