@@ -81,7 +81,7 @@ set tabstop=2
 set list
 " set nolist
 set listchars+=eol:¬,tab:»»,trail:~,extends:>,precedes:<,space:·
-set expandtab
+" set expandtab
 set hlsearch
 set shiftwidth=2
 set guitablabel=%N\ %f
