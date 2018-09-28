@@ -91,8 +91,8 @@ set shiftwidth=2
 set guitablabel=%N\ %f
 set autoread
 set backspace=eol,indent,start
-hi SpecialKey ctermfg=DarkGrey
-hi NonText ctermfg=DarkGrey
+hi SpecialKey ctermfg=238
+hi NonText ctermfg=238
 
 " Custom mappings
 nmap ef :ALEFix eslint<CR>¬
