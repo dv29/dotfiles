@@ -1,7 +1,19 @@
 # Install bash-git-prompt
 
+# getting the system information
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    # CYGWIN*)    machine=Cygwin;;
+    # MINGW*)     machine=MinGw;;
+    *)
+      machine="UNKNOWN:${unameOut}"
+      echo ${machine}
+esac
+
 if [[ ! -d ~/.bash-git-prompt ]]; then
-  git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+    git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 fi
 
 # if [[ ! -d ~/.bash_it ]]; then
@@ -10,12 +22,16 @@ fi
 # fi
 
 if [[ ! -d ~/.vim ]]; then
-  echo "Initializing vim configurations"
-  source ~/dotfiles/.init_vim.sh
+    echo "Initializing vim configurations"
+    source ~/dotfiles/.init_vim.sh
 fi
 
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
+
+if [ $machine = 'Mac' ]; then
+    alias ls='ls -G'
+fi
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -49,9 +65,10 @@ alias grm="git rebase -i origin/master"
 alias gd="git diff HEAD"
 alias gr="git reset"
 alias reinitpack="rm -rf node_modules/ package-lock.json && npm i"
+alias gm="git mergetool -t meld"
 
 pushCurrentBranch() {
-  git push -u origin $(git rev-parse --abbrev-ref HEAD)
+    git push -u origin $(git rev-parse --abbrev-ref HEAD)
 }
 alias gpb=pushCurrentBranch
 

@@ -34,15 +34,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Git support for nerdtree > https://github.com/Xuyuanp/nerdtree-git-plugin.git ~/.vim/bundle/nerdtree-git-plugin
 set runtimepath^=~/.vim/bundle/nerdtree-git-plugin
 
-
 " JS > git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
 set runtimepath^=~/.vim/bundle/vim-javascript
+let g:javascript_plugin_jsdoc = 1
 
 " ALE / Linting > git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
 set runtimepath^=~/.vim/bundle/ale
+let g:ale_debug = "msg"
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ }
+let g:airline#extensions#ale#enabled = 1
 
 " snippets > git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
 set runtimepath^=~/.vim/bundle/ultisnips
@@ -54,13 +56,14 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/dotfiles/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/dotfiles/UltiSnips', $HOME.'/.vim/bundle/vim-snippets/UltiSnips']
+let g:snips_author="Vora, Deep"
 
 " status bar > git clone https://github.com/vim-airline/vim-airline.git
 " ~/.vim/bundle/vim-airline
 set runtimepath^=~/.vim/bundle/vim-airline
 
-" status bar theam > git clone https://github.com/vim-airline/vim-airline-themes.git
+" status bar theme > git clone https://github.com/vim-airline/vim-airline-themes.git
 " ~/.vim/bundle/vim-ariline-themes
 set runtimepath^=~/.vim/bundle/vim-airline-themes
 let g:airline_theme='simple'
@@ -77,6 +80,14 @@ set runtimepath^=~/.vim/bundle/tabline.vim
 " ~/.vim/bundle/editorconfig-vim
 set runtimepath^=~/.vim/bundle/editorconfig-vim
 
+" " dust > git clone https://github.com/jimmyhchan/dustjs.vim.git
+" " ~/.vim/bundle/dustjs.vim
+" set runtimepath^=~/.vim/bundle/dustjs.vim
+
+" JsDocblocks > git clone https://github.com/heavenshell/vim-jsdoc.git
+" ~/.vim/bundle/vim-jsdoc
+set runtimepath^=~/.vim/bundle/vim-jsdoc
+
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
@@ -91,8 +102,13 @@ set shiftwidth=2
 set guitablabel=%N\ %f
 set autoread
 set backspace=eol,indent,start
-hi SpecialKey ctermfg=DarkGrey
-hi NonText ctermfg=DarkGrey
+set relativenumber
+hi SpecialKey ctermfg=238
+hi NonText ctermfg=238
+hi MatchParen ctermbg=245
 
 " Custom mappings
-nmap ef :ALEFix eslint<CR>¬
+nmap fe :ALEFix eslint<CR>¬
+nmap fp :ALEFix prettier<CR>¬
+nmap sh :set hls!<CR>
+nmap mm :ALEToggle<CR>
