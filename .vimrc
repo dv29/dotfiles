@@ -91,6 +91,7 @@ set shiftwidth=2
 set guitablabel=%N\ %f
 set autoread
 set backspace=eol,indent,start
+set relativenumber
 hi SpecialKey ctermfg=238
 hi NonText ctermfg=238
 
