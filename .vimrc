@@ -97,3 +97,4 @@ hi NonText ctermfg=238
 
 " Custom mappings
 nmap ef :ALEFix eslint<CR>¬
+nmap pf :ALEFix prettier<CR>¬
