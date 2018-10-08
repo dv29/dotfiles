@@ -77,6 +77,10 @@ set runtimepath^=~/.vim/bundle/tabline.vim
 " ~/.vim/bundle/editorconfig-vim
 set runtimepath^=~/.vim/bundle/editorconfig-vim
 
+" " dust > git clone https://github.com/jimmyhchan/dustjs.vim.git
+" " ~/.vim/bundle/dustjs.vim
+" set runtimepath^=~/.vim/bundle/dustjs.vim
+
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
@@ -96,5 +100,5 @@ hi SpecialKey ctermfg=238
 hi NonText ctermfg=238
 
 " Custom mappings
-nmap ef :ALEFix eslint<CR>¬
-nmap pf :ALEFix prettier<CR>¬
+nmap fe :ALEFix eslint<CR>¬
+nmap fp :ALEFix prettier<CR>¬
