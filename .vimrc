@@ -81,6 +81,10 @@ set runtimepath^=~/.vim/bundle/editorconfig-vim
 " " ~/.vim/bundle/dustjs.vim
 " set runtimepath^=~/.vim/bundle/dustjs.vim
 
+" JsDocblocks > git clone https://github.com/heavenshell/vim-jsdoc.git
+" ~/.vim/bundle/vim-jsdoc
+set runtimepath^=~/.vim/bundle/vim-jsdoc
+
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
@@ -102,3 +106,4 @@ hi NonText ctermfg=238
 " Custom mappings
 nmap fe :ALEFix eslint<CR>¬
 nmap fp :ALEFix prettier<CR>¬
+nmap sh :set hls!<CR>
