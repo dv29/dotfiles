@@ -107,3 +107,4 @@ hi NonText ctermfg=238
 nmap fe :ALEFix eslint<CR>¬
 nmap fp :ALEFix prettier<CR>¬
 nmap sh :set hls!<CR>
+nmap mm :ALEToggle<CR>
