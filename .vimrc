@@ -54,7 +54,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/dotfiles/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/dotfiles/UltiSnips', $HOME.'/.vim/bundle/vim-snippets/UltiSnips']
+let g:snips_author="Vora, Deep"
 
 " status bar > git clone https://github.com/vim-airline/vim-airline.git
 " ~/.vim/bundle/vim-airline
