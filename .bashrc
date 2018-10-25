@@ -7,7 +7,7 @@ case "${unameOut}" in
     Darwin*)    machine=Mac;;
     # CYGWIN*)    machine=Cygwin;;
     # MINGW*)     machine=MinGw;;
-    *)          
+    *)
       machine="UNKNOWN:${unameOut}"
       echo ${machine}
 esac
