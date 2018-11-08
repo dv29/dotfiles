@@ -34,9 +34,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Git support for nerdtree > https://github.com/Xuyuanp/nerdtree-git-plugin.git ~/.vim/bundle/nerdtree-git-plugin
 set runtimepath^=~/.vim/bundle/nerdtree-git-plugin
 
-
 " JS > git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
 set runtimepath^=~/.vim/bundle/vim-javascript
+let g:javascript_plugin_jsdoc = 1
 
 " ALE / Linting > git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
 set runtimepath^=~/.vim/bundle/ale
@@ -105,6 +105,7 @@ set backspace=eol,indent,start
 set relativenumber
 hi SpecialKey ctermfg=238
 hi NonText ctermfg=238
+hi MatchParen ctermbg=245
 
 " Custom mappings
 nmap fe :ALEFix eslint<CR>¬
