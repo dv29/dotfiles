@@ -40,9 +40,11 @@ set runtimepath^=~/.vim/bundle/vim-javascript
 
 " ALE / Linting > git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
 set runtimepath^=~/.vim/bundle/ale
+let g:ale_debug = "msg"
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ }
+let g:airline#extensions#ale#enabled = 1
 
 " snippets > git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
 set runtimepath^=~/.vim/bundle/ultisnips
@@ -61,7 +63,7 @@ let g:snips_author="Vora, Deep"
 " ~/.vim/bundle/vim-airline
 set runtimepath^=~/.vim/bundle/vim-airline
 
-" status bar theam > git clone https://github.com/vim-airline/vim-airline-themes.git
+" status bar theme > git clone https://github.com/vim-airline/vim-airline-themes.git
 " ~/.vim/bundle/vim-ariline-themes
 set runtimepath^=~/.vim/bundle/vim-airline-themes
 let g:airline_theme='simple'
