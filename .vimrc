@@ -7,13 +7,13 @@ call plug#begin('~/.vim/bundle')
 
 " typescript > git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim.git
 Plug 'leafgarland/typescript-vim'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'mxw/vim-jsx'
 
 call plug#end()
 
 " to disable youcompleteme uncomment the next line
-" let g:loaded_youcompleteme = 1
+let g:loaded_youcompleteme = 1
 
 " fuzzy finder / ctrlp > git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -58,7 +58,7 @@ set runtimepath^=~/.vim/bundle/ultisnips
 set runtimepath^=~/.vim/bundle/vim-snippets
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/vim-snippets/UltiSnips', $HOME.'/dotfiles/UltiSnips']
-let g:UltiSnipsExpandTrigger="<C-l>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-t>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:UltiSnipsEditSplit="vertical"
