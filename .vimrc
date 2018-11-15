@@ -57,7 +57,7 @@ set runtimepath^=~/.vim/bundle/ultisnips
 " snippets > git clone https://github.com/honza/vim-snippets.git ~/.vim/bundle/vim-snippets
 set runtimepath^=~/.vim/bundle/vim-snippets
 
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/vim-snippets/UltiSnips', $HOME.'/.vim/dotfiles/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/vim-snippets/UltiSnips', $HOME.'/dotfiles/UltiSnips']
 let g:UltiSnipsExpandTrigger="<C-l>"
 let g:UltiSnipsJumpForwardTrigger="<C-t>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
