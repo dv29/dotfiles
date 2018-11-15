@@ -8,8 +8,12 @@ call plug#begin('~/.vim/bundle')
 " typescript > git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim.git
 Plug 'leafgarland/typescript-vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
+
+" to disable youcompleteme uncomment the next line
+" let g:loaded_youcompleteme = 1
 
 " fuzzy finder / ctrlp > git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -53,11 +57,11 @@ set runtimepath^=~/.vim/bundle/ultisnips
 " snippets > git clone https://github.com/honza/vim-snippets.git ~/.vim/bundle/vim-snippets
 set runtimepath^=~/.vim/bundle/vim-snippets
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/vim-snippets/UltiSnips', $HOME.'/.vim/dotfiles/UltiSnips']
+let g:UltiSnipsExpandTrigger="<C-l>"
+let g:UltiSnipsJumpForwardTrigger="<C-t>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/dotfiles/UltiSnips', $HOME.'/.vim/bundle/vim-snippets/UltiSnips']
 let g:snips_author="Vora, Deep"
 
 " status bar > git clone https://github.com/vim-airline/vim-airline.git
@@ -88,6 +92,9 @@ set runtimepath^=~/.vim/bundle/editorconfig-vim
 " JsDocblocks > git clone https://github.com/heavenshell/vim-jsdoc.git
 " ~/.vim/bundle/vim-jsdoc
 set runtimepath^=~/.vim/bundle/vim-jsdoc
+
+" jsx configs
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
