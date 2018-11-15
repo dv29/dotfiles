@@ -7,6 +7,7 @@ call plug#begin('~/.vim/bundle')
 
 " typescript > git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim.git
 Plug 'leafgarland/typescript-vim'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 

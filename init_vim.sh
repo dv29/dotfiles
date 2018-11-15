@@ -1,18 +1,30 @@
 #!/bin/bash
 
+# getting the system information
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    # CYGWIN*)    machine=Cygwin;;
+    # MINGW*)     machine=MinGw;;
+    *)
+      machine="UNKNOWN:${unameOut}"
+      echo ${machine}
+esac
+
 # create tmp and backup folders for vim
 mkdir -p ~/.vim/backup
 mkdir -p ~/.vim/swap
 mkdir -p ~/.vim/undo
 
-echo "Vim paths created"
+echo "==> Vim paths created"
 
 # Installing plugin manager for vim 
 
 if [[ ! -f ~/.vim/autoload/plug.vim ]]; then
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  echo "Plugin manager for vim installed"
+  echo "==> Plugin manager for vim installed"
 fi
 
 declare -a packages=(
@@ -39,6 +51,15 @@ do
   bare=${last%%.git}
   test -e ~/.vim/bundle/"$bare" || git clone "$i" ~/.vim/bundle/"$bare"
 done
+
+echo "==> Initializing vim packages and compiling"
+vim +PlugInstall +qall +silent
+
+if [ $machine = 'Linux' ]; then
+  sudo apt install -y build-essential cmake python3-dev
+fi
+# compile YMC for autocomplete
+python3 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer --go-completer
 
 echo "Vim packages installed"
 
