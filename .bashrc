@@ -29,6 +29,9 @@ fi
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 
+# bash settings 
+set -o vi
+
 if [ $machine = 'Mac' ]; then
     alias ls='ls -G'
 fi
@@ -58,10 +61,11 @@ alias gcnb="git checkout -b "
 alias gcb="git checkout "
 alias gd="git diff --cached"
 alias gk="gitk"
-alias grm="git rebase -i master" 
 alias gpl="git pull" 
 alias gpu="git push"
+alias gpub="git push --follow-tags MKT"
 alias grm="git rebase -i origin/master"
+alias grc="git rebase --continue"
 alias gd="git diff HEAD"
 alias gr="git reset"
 alias reinitpack="rm -rf node_modules/ package-lock.json && npm i"

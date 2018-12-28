@@ -120,3 +120,8 @@ nmap fe :ALEFix eslint<CR>¬
 nmap fp :ALEFix prettier<CR>¬
 nmap sh :set hls!<CR>
 nmap mm :ALEToggle<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
