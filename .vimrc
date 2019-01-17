@@ -10,6 +10,8 @@ Plug 'leafgarland/typescript-vim'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'mxw/vim-jsx'
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
 " to disable youcompleteme uncomment the next line
