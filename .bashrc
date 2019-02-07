@@ -69,7 +69,7 @@ alias grc="git rebase --continue"
 alias gd="git diff HEAD"
 alias gr="git reset"
 alias reinitpack="rm -rf node_modules/ package-lock.json && npm i"
-alias gm="git mergetool -t meld"
+alias gm="git mergetool -t vimdiff"
 
 pushCurrentBranch() {
     git push -u origin $(git rev-parse --abbrev-ref HEAD)
