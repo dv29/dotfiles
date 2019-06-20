@@ -11,6 +11,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 call plug#end()
 
 " to disable youcompleteme uncomment the next line
@@ -112,8 +115,9 @@ set guitablabel=%N\ %f
 set autoread
 set backspace=eol,indent,start
 set relativenumber
-hi SpecialKey ctermfg=238
-hi NonText ctermfg=238
+set ignorecase
+hi SpecialKey ctermfg=236
+hi NonText ctermfg=236
 hi MatchParen ctermbg=245
 
 " Custom mappings
