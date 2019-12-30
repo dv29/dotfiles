@@ -14,6 +14,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" Plug 'vim-syntastic/syntastic'
+
 call plug#end()
 
 " to disable youcompleteme uncomment the next line
@@ -52,6 +54,7 @@ set runtimepath^=~/.vim/bundle/ale
 let g:ale_debug = "msg"
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
+  \ 'cpp': ['cpplint'],
   \ }
 let g:airline#extensions#ale#enabled = 1
 
@@ -108,7 +111,7 @@ set tabstop=2
 set list
 " set nolist
 set listchars+=eol:¬,tab:»»,trail:~,extends:>,precedes:<,space:·
-" set expandtab
+set expandtab
 set hlsearch
 set shiftwidth=2
 set guitablabel=%N\ %f
@@ -123,6 +126,8 @@ hi MatchParen ctermbg=245
 " Custom mappings
 nmap fe :ALEFix eslint<CR>¬
 nmap fp :ALEFix prettier<CR>¬
+nmap fc :ALEFix cpplint<CR>¬
+nmap fgg :ALEFix gofmt<CR>¬
 nmap sh :set hls!<CR>
 nmap mm :ALEToggle<CR>
 nmap gj :JsDoc<CR>
@@ -131,3 +136,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
