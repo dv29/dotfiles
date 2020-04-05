@@ -9,9 +9,8 @@ call plug#begin('~/.vim/bundle')
 Plug 'leafgarland/typescript-vim'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'mxw/vim-jsx'
-
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+Plug 'dense-analysis/ale'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Plug 'vim-syntastic/syntastic'
@@ -55,8 +54,13 @@ let g:ale_debug = "msg"
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'cpp': ['cpplint'],
+  \ 'go' :  ['gofmt', 'golint', 'govet', 'gopls']
   \ }
 let g:airline#extensions#ale#enabled = 1
+" let g:ale_open_list = 1
+" let g:ale_sign_column_always = 1
+" let g:ale_sign_error = '>>'
+" let g:ale_sign_warning = '--'
 
 " snippets > git clone https://github.com/SirVer/ultisnips.git ~/.vim/bundle/ultisnips
 set runtimepath^=~/.vim/bundle/ultisnips

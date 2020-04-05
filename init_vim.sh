@@ -32,7 +32,7 @@ declare -a packages=(
   "https://github.com/moll/vim-node.git"
   "https://github.com/scrooloose/nerdtree.git"
   "https://github.com/pangloss/vim-javascript.git"
-  "https://github.com/w0rp/ale.git"
+  # "https://github.com/w0rp/ale.git"
   "https://github.com/SirVer/ultisnips.git"
   "https://github.com/honza/vim-snippets.git"
   "https://github.com/leafgarland/typescript-vim.git"
