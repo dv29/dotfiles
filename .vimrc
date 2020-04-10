@@ -54,7 +54,6 @@ let g:ale_debug = "msg"
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'cpp': ['cpplint'],
-  \ 'go' :  ['gofmt', 'golint', 'govet', 'gopls']
   \ }
 let g:airline#extensions#ale#enabled = 1
 " let g:ale_open_list = 1
@@ -106,6 +105,11 @@ set runtimepath^=~/.vim/bundle/vim-jsdoc
 
 " jsx configs
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" go configs
+let g:go_debug=['shell-commands']
+nmap <C-F10> :GoDebugNext<CR>¬
+nmap <C-F11> :GoDebugStep<CR>¬
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
