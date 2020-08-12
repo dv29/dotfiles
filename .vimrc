@@ -1,24 +1,56 @@
+" set nocompatible
+" filetype off
+
 scriptencoding utf-8
 set encoding=utf-8
 
+"""""""""""""""""
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin('~/.vim/bundle')
+
+" " Plug 'vim-syntastic/syntastic'
+
+" Plugin 'VundleVim/Vundle.vim'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'mxw/vim-jsx'
+" Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plugin 'dense-analysis/ale'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'jparise/vim-graphql'
+" Plugin 'heavenshell/vim-jsdoc', {
+"   \ 'for': ['javascript', 'javascript.jsx','typescript'],
+"   \ 'do': 'make install'
+" \}
+
+" call vundle#end()
+
+" filetype plugin indent on
+"""""""""""""""""
+
+""""""""""""""""""
 call plug#begin('~/.vim/bundle')
 
 " Plug 'vim-syntastic/syntastic'
 
 " typescript > git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim.git
 Plug 'leafgarland/typescript-vim'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'dense-analysis/ale'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" Plug 'vim-syntastic/syntastic'
+Plug 'jparise/vim-graphql'
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+\}
 
 call plug#end()
+""""""""""""""""""
 
 " to disable youcompleteme uncomment the next line
-let g:loaded_youcompleteme = 1
+" let g:loaded_youcompleteme = 1
 
 " fuzzy finder / ctrlp > git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
