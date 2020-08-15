@@ -54,6 +54,7 @@ let g:ale_debug = "msg"
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'cpp': ['cpplint'],
+  \ 'go': ['gofmt', 'golint', 'govet', 'gopls']
   \ }
 let g:airline#extensions#ale#enabled = 1
 " let g:ale_open_list = 1
@@ -69,8 +70,8 @@ set runtimepath^=~/.vim/bundle/vim-snippets
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/vim-snippets/UltiSnips', $HOME.'/dotfiles/UltiSnips']
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-t>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:snips_author="Vora, Deep"
 
@@ -110,6 +111,9 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:go_debug=['shell-commands']
 nmap <C-F10> :GoDebugNext<CR>¬
 nmap <C-F11> :GoDebugStep<CR>¬
+
+ " tsx configs
+autocmd BufNewFile,BufRead *.tsx set filetype=javascript.jsx
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
