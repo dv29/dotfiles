@@ -27,12 +27,16 @@ if [[ ! -f ~/.vim/autoload/plug.vim ]]; then
   echo "==> Plugin manager for vim installed"
 fi
 
+# if [[ ! -f ~/.vim/autoload/Vundle.vim ]]; then
+#   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#   echo "==> Plugin manager for vim installed"
+# fi
+
 declare -a packages=(
   "https://github.com/ctrlpvim/ctrlp.vim.git"
   "https://github.com/moll/vim-node.git"
   "https://github.com/scrooloose/nerdtree.git"
   "https://github.com/pangloss/vim-javascript.git"
-  # "https://github.com/w0rp/ale.git"
   "https://github.com/SirVer/ultisnips.git"
   "https://github.com/honza/vim-snippets.git"
   "https://github.com/leafgarland/typescript-vim.git"
@@ -41,9 +45,6 @@ declare -a packages=(
   "https://github.com/tpope/vim-commentary.git"
   "https://github.com/mkitt/tabline.vim.git"
   "https://github.com/editorconfig/editorconfig-vim.git"
-  # "https://github.com/jimmyhchan/dustjs.vim.git"
-  "https://github.com/heavenshell/vim-jsdoc.git"
-  # "https://github.com/vim-syntastic/syntastic.git"
   )
 
 for i in "${packages[@]}"
@@ -54,7 +55,8 @@ do
 done
 
 echo "==> Initializing vim packages and compiling"
-# vim +PlugInstall +qall +silent
+vim +PlugInstall +qall +silent
+# vim +PluginInstall +qall
 
 # if [ $machine = 'Linux' ]; then
 #   sudo apt install -y build-essential cmake python3-dev
@@ -62,7 +64,6 @@ echo "==> Initializing vim packages and compiling"
 #   brew install cmake
 # fi
 # # compile YMC for autocomplete
-# python3 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer --go-completer
+# python3 ~/.vim/bundle/YouCompleteMe/install.py --all
 
 echo "Vim packages installed"
-
