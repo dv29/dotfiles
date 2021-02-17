@@ -45,6 +45,9 @@ Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
 \}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+" Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 """"""""""""""""""
@@ -187,3 +190,7 @@ noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
+
+nmap ge :!clear && g++ -std=c++17 -Wshadow -Wall -o a.out % -O2 -Wno-unused-result<CR>
+nmap gr :!./a.out<CR>¬
+
