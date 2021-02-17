@@ -168,6 +168,8 @@ set autoread
 set backspace=eol,indent,start
 set relativenumber
 set ignorecase
+set completeopt-=preview
+
 hi SpecialKey ctermfg=236
 hi NonText ctermfg=236
 hi MatchParen ctermbg=245
