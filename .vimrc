@@ -70,7 +70,7 @@ autocmd vimenter * NERDTreeToggle
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
-let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeGitStatusShowIgnored = 1
 map <C-n> :NERDTreeToggle<CR>
 " autoclose nerdtree if its last window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -162,10 +162,14 @@ set backspace=eol,indent,start
 set relativenumber
 set ignorecase
 set completeopt-=preview
+set foldmethod=syntax
+set foldlevel=3
 
 hi SpecialKey ctermfg=236
 hi NonText ctermfg=236
 hi MatchParen ctermbg=245
+hi ALEWarning ctermbg=172
+hi ALEError ctermbg=124
 
 " Custom mappings
 nmap fe :ALEFix eslint<CR>¬

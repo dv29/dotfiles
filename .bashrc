@@ -63,7 +63,7 @@ alias gd="git diff --cached"
 alias gk="gitk"
 alias gpl="git pull" 
 alias gpu="git push"
-alias gpub="git push --follow-tags MKT"
+alias gpub="git push --follow-tags"
 alias grm="git rebase -i origin/master"
 alias grc="git rebase --continue"
 alias gd="git diff HEAD"
@@ -71,9 +71,13 @@ alias gr="git reset"
 alias reinitpack="rm -rf node_modules/ package-lock.json && npm i"
 alias gm="git mergetool -t vimdiff"
 
-pushCurrentBranch() {
-    git push -u origin $(git rev-parse --abbrev-ref HEAD)
+function gpb() {
+  ## Git push branch to remote origin
+  git push -u $1 origin $(git rev-parse --abbrev-ref HEAD)
 }
-alias gpb=pushCurrentBranch
+
+function grb() {
+  git rebase -i HEAD~$1
+}
 
 alias nrb="npm run build"
