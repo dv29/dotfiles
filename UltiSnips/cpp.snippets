@@ -2,9 +2,9 @@ snippet ins
 std::cout << $1 << std::endl;
 endsnippet
 
-snippet for
-for (unsigned int i = 0; i < $1; i++) {
-
+snippet fui "for loop (for unsigned int)"
+for (unsigned int ${2:i} = ${4:0}; $2 < ${1:n}; ${3:++$2}) {
+	${VISUAL}$0
 }
 endsnippet
 
