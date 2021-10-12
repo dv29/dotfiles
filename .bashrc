@@ -80,4 +80,8 @@ function grb() {
   git rebase -i HEAD~$1
 }
 
+function search() {
+  grep -ri "$1" --exclude-dir=node_modules --exclude-dir=.next ./
+}
+
 alias nrb="npm run build"
