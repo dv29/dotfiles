@@ -46,6 +46,7 @@ Plug 'heavenshell/vim-jsdoc', {
   \ 'do': 'make install'
 \}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
 " Plug 'godlygeek/tabular'
 " Plug 'plasticboy/vim-markdown'
 
@@ -73,6 +74,7 @@ autocmd vimenter * NERDTreeToggle
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
 let g:NERDTreeGitStatusShowIgnored = 1
 map <C-n> :NERDTreeToggle<CR>
 " autoclose nerdtree if its last window open
@@ -168,6 +170,7 @@ set autoread
 set backspace=eol,indent,start
 set relativenumber
 set ignorecase
+set incsearch
 set completeopt-=preview
 set foldmethod=syntax
 set foldlevel=3
@@ -177,6 +180,7 @@ hi NonText ctermfg=236
 hi MatchParen ctermbg=245
 hi ALEWarning ctermbg=172
 hi ALEError ctermbg=124
+hi Folded ctermbg=234
 
 " Custom mappings
 nmap fe :ALEFix eslint<CR>¬
@@ -184,6 +188,7 @@ nmap fp :ALEFix prettier<CR>¬
 nmap fc :ALEFix cpplint<CR>¬
 nmap fgg :ALEFix gofmt<CR>¬
 nmap sh :set hls!<CR>
+nmap sfl :set foldlevel=1<CR>
 nmap mm :ALEToggle<CR>
 nmap gj :JsDoc<CR>
 

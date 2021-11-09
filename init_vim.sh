@@ -63,7 +63,8 @@ vim +PlugInstall +qall +silent
 # elif [ $machine = 'Mac' ]; then
 #   brew install cmake
 # fi
-# # compile YMC for autocomplete
-# python3 ~/.vim/bundle/YouCompleteMe/install.py --all
+
+# compile YMC for autocomplete
+python3 ~/.vim/bundle/YouCompleteMe/install.py --all
 
 echo "Vim packages installed"

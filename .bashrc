@@ -81,7 +81,7 @@ function grb() {
 }
 
 function search() {
-  grep -ri "$1" --exclude-dir=node_modules --exclude-dir=.next ./
+  grep -rin "$1" --exclude-dir={node_modules,assets,.next} ./$2
 }
 
 alias nrb="npm run build"
