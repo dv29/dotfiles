@@ -58,11 +58,13 @@ echo "==> Initializing vim packages and compiling"
 vim +PlugInstall +qall +silent
 # vim +PluginInstall +qall
 
-# if [ $machine = 'Linux' ]; then
-#   sudo apt install -y build-essential cmake python3-dev
-# elif [ $machine = 'Mac' ]; then
-#   brew install cmake
-# fi
+if [ $machine = 'Linux' ]; then
+  echo "Linux";
+  # sudo apt install -y build-essential cmake python3-dev
+elif [ $machine = 'Mac' ]; then
+  # brew install cmake
+  brew install shellcheck
+fi
 
 # compile YMC for autocomplete
 python3 ~/.vim/bundle/YouCompleteMe/install.py --all
