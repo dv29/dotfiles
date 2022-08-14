@@ -91,6 +91,7 @@ let g:javascript_plugin_jsdoc = 1
 set runtimepath^=~/.vim/bundle/ale
 let g:ale_debug = "msg"
 let g:ale_linters = {
+  \ 'sh': ['shellcheck'] ,
   \ 'javascript': ['eslint'],
   \ 'cpp': ['cpplint'],
   \ 'go': ['gofmt', 'golint', 'govet', 'gopls'],
@@ -181,7 +182,8 @@ set ignorecase
 set incsearch
 set completeopt-=preview
 set foldmethod=syntax
-" set foldlevel=3
+set foldlevel=3
+autocmd FileType yaml setlocal foldmethod=indent
 
 hi SpecialKey ctermfg=236
 hi NonText ctermfg=236

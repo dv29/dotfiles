@@ -52,6 +52,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias g="git"
+alias gb="git branch"
 alias gs="git status"
 alias ga="git add ."
 alias gcom="git commit -m"
@@ -63,7 +65,6 @@ alias gd="git diff --cached"
 alias gk="gitk"
 alias gpl="git pull" 
 alias gpu="git push"
-alias gpub="git push --follow-tags"
 alias grm="git rebase -i origin/master"
 alias grc="git rebase --continue"
 alias gd="git diff HEAD"
@@ -74,7 +75,8 @@ alias xclip="xclip -sel clip"
 
 function gpb() {
   ## Git push branch to remote origin
-  git push -u $1 origin $(git rev-parse --abbrev-ref HEAD)
+  REMOTE=${1:-origin}
+  git push -u $REMOTE $(git rev-parse --abbrev-ref HEAD)
 }
 
 function grb() {
