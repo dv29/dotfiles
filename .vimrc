@@ -93,9 +93,16 @@ let g:ale_debug = "msg"
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'cpp': ['cpplint'],
-  \ 'go': ['gofmt', 'golint', 'govet', 'gopls']
+  \ 'go': ['gofmt', 'golint', 'govet', 'gopls'],
+  \ 'rust': ['rls']
   \ }
+let g:ale_fixers = {
+  \ 'rust': ['rustfmt'],
+  \ }
+let g:ale_completion_enabled = 1
+let g:ale_rust_rls_toolchain = 'stable'
 let g:airline#extensions#ale#enabled = 1
+let g:ale_rust_rustfmt_options = '--edition 2018'
 " let g:ale_open_list = 1
 " let g:ale_sign_column_always = 1
 " let g:ale_sign_error = '>>'
@@ -147,6 +154,7 @@ set runtimepath^=~/.vim/bundle/vim-jsdoc
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " go configs
+let g:go_fold_enable = []
 let g:go_debug=['shell-commands']
 nmap <C-F10> :GoDebugNext<CR>¬
 nmap <C-F11> :GoDebugStep<CR>¬
@@ -173,7 +181,7 @@ set ignorecase
 set incsearch
 set completeopt-=preview
 set foldmethod=syntax
-set foldlevel=3
+" set foldlevel=3
 
 hi SpecialKey ctermfg=236
 hi NonText ctermfg=236
@@ -187,6 +195,7 @@ nmap fe :ALEFix eslint<CR>¬
 nmap fp :ALEFix prettier<CR>¬
 nmap fc :ALEFix cpplint<CR>¬
 nmap fgg :ALEFix gofmt<CR>¬
+nmap fr :ALEFix rustfmt<CR>¬
 nmap sh :set hls!<CR>
 nmap sfl :set foldlevel=1<CR>
 nmap mm :ALEToggle<CR>

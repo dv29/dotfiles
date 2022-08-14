@@ -70,6 +70,7 @@ alias gd="git diff HEAD"
 alias gr="git reset"
 alias reinitpack="rm -rf node_modules/ package-lock.json && npm i"
 alias gm="git mergetool -t vimdiff"
+alias xclip="xclip -sel clip"
 
 function gpb() {
   ## Git push branch to remote origin
