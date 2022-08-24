@@ -32,27 +32,27 @@ fi
 #   echo "==> Plugin manager for vim installed"
 # fi
 
-declare -a packages=(
-  "https://github.com/ctrlpvim/ctrlp.vim.git"
-  "https://github.com/moll/vim-node.git"
-  "https://github.com/scrooloose/nerdtree.git"
-  "https://github.com/pangloss/vim-javascript.git"
-  "https://github.com/SirVer/ultisnips.git"
-  "https://github.com/honza/vim-snippets.git"
-  "https://github.com/leafgarland/typescript-vim.git"
-  "https://github.com/vim-airline/vim-airline.git"
-  "https://github.com/vim-airline/vim-airline-themes.git"
-  "https://github.com/tpope/vim-commentary.git"
-  "https://github.com/mkitt/tabline.vim.git"
-  "https://github.com/editorconfig/editorconfig-vim.git"
-  )
+# declare -a packages=(
+#   "https://github.com/ctrlpvim/ctrlp.vim.git"
+#   "https://github.com/moll/vim-node.git"
+#   "https://github.com/scrooloose/nerdtree.git"
+#   "https://github.com/pangloss/vim-javascript.git"
+#   "https://github.com/SirVer/ultisnips.git"
+#   "https://github.com/honza/vim-snippets.git"
+#   "https://github.com/leafgarland/typescript-vim.git"
+#   "https://github.com/vim-airline/vim-airline.git"
+#   "https://github.com/vim-airline/vim-airline-themes.git"
+#   "https://github.com/tpope/vim-commentary.git"
+#   "https://github.com/mkitt/tabline.vim.git"
+#   "https://github.com/editorconfig/editorconfig-vim.git"
+#   )
 
-for i in "${packages[@]}"
-do
-  last=${i##*/}
-  bare=${last%%.git}
-  test -e ~/.vim/bundle/"$bare" || git clone "$i" ~/.vim/bundle/"$bare"
-done
+# for i in "${packages[@]}"
+# do
+#   last=${i##*/}
+#   bare=${last%%.git}
+#   test -e ~/.vim/bundle/"$bare" || git clone "$i" ~/.vim/bundle/"$bare"
+# done
 
 echo "==> Initializing vim packages and compiling"
 vim +PlugInstall +qall +silent

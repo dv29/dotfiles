@@ -46,9 +46,25 @@ Plug 'heavenshell/vim-jsdoc', {
   \ 'do': 'make install'
 \}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'hashivim/vim-terraform'
+Plug 'mustache/vim-mustache-handlebars'
 
+
+Plug  'ctrlpvim/ctrlp.vim'
+Plug  'moll/vim-node'
+Plug  'scrooloose/nerdtree'
+Plug  'pangloss/vim-javascript'
+Plug  'SirVer/ultisnips'
+Plug  'honza/vim-snippets'
+Plug  'leafgarland/typescript-vim'
+Plug  'vim-airline/vim-airline'
+Plug  'vim-airline/vim-airline-themes'
+Plug  'tpope/vim-commentary'
+Plug  'mkitt/tabline.vim'
+Plug  'editorconfig/editorconfig-vim'
+
+ 
 " Plug 'godlygeek/tabular'
-" Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 """"""""""""""""""
@@ -157,6 +173,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " go configs
 let g:go_fold_enable = []
 let g:go_debug=['shell-commands']
+let g:go_def_mode='gopls'
 nmap <C-F10> :GoDebugNext<CR>¬
 nmap <C-F11> :GoDebugStep<CR>¬
 
