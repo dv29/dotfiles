@@ -232,4 +232,5 @@ noremap <Leader>P "+p
 
 nmap ge :!clear && g++ -std=c++17 -Wshadow -Wall -D LOCAL -o ~/project/competitive_programming/a.out % -O2 -Wno-unused-result<CR>
 nmap gr :!./a.out<CR>¬
+nmap cpy :%w !xclip -i -sel c<CR>¬
 
