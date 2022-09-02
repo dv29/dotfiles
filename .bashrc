@@ -63,6 +63,7 @@ alias gcm="git checkout master"
 alias gcnb="git checkout -b "
 alias gcb="git checkout "
 alias gd="git diff --cached"
+alias gdc="git diff --check"
 alias gk="gitk"
 alias gpl="git pull" 
 alias gpu="git push"
@@ -72,6 +73,7 @@ alias gd="git diff HEAD"
 alias gr="git reset"
 alias reinitpack="rm -rf node_modules/ package-lock.json && npm i"
 alias gm="git mergetool -t vimdiff"
+alias xclip="xclip -sel clip"
 
 function gpb() {
   ## Git push branch to remote origin

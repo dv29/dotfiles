@@ -4,43 +4,28 @@
 scriptencoding utf-8
 set encoding=utf-8
 
-"""""""""""""""""
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin('~/.vim/bundle')
-
-" " Plug 'vim-syntastic/syntastic'
-
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'leafgarland/typescript-vim'
-" Plugin 'ycm-core/YouCompleteMe'
-" Plugin 'mxw/vim-jsx'
-" Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Plugin 'dense-analysis/ale'
-" Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Plugin 'jparise/vim-graphql'
-" Plugin 'heavenshell/vim-jsdoc', {
-"   \ 'for': ['javascript', 'javascript.jsx','typescript'],
-"   \ 'do': 'make install'
-" \}
-
-" call vundle#end()
-
-" filetype plugin indent on
-"""""""""""""""""
+" Define a global variable containing the current environment's name
+" if it hasn't been already defined.
+if !exists('g:env')
+  if has('win64') || has('win32') || has('win16')
+    let g:env = 'WINDOWS'
+  else
+    let g:env = toupper(substitute(system('uname'), '\n', '', ''))
+  endif
+endif
 
 """"""""""""""""""
 call plug#begin('~/.vim/bundle')
 
-" Plug 'vim-syntastic/syntastic'
 
 " typescript > git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim.git
 Plug 'leafgarland/typescript-vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'jparise/vim-graphql'
+" Plug 'jparise/vim-graphql'
 Plug 'heavenshell/vim-jsdoc', {
   \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
@@ -49,21 +34,21 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'hashivim/vim-terraform'
 Plug 'mustache/vim-mustache-handlebars'
 
+Plug 'vim-syntastic/syntastic'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'moll/vim-node'
+Plug 'scrooloose/nerdtree'
+Plug 'pangloss/vim-javascript'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-commentary'
+Plug 'mkitt/tabline.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug  'ctrlpvim/ctrlp.vim'
-Plug  'moll/vim-node'
-Plug  'scrooloose/nerdtree'
-Plug  'pangloss/vim-javascript'
-Plug  'SirVer/ultisnips'
-Plug  'honza/vim-snippets'
-Plug  'leafgarland/typescript-vim'
-Plug  'vim-airline/vim-airline'
-Plug  'vim-airline/vim-airline-themes'
-Plug  'tpope/vim-commentary'
-Plug  'mkitt/tabline.vim'
-Plug  'editorconfig/editorconfig-vim'
-
- 
 " Plug 'godlygeek/tabular'
 
 call plug#end()
@@ -104,15 +89,30 @@ set runtimepath^=~/.vim/bundle/vim-javascript
 let g:javascript_plugin_jsdoc = 1
 
 " ALE / Linting > git clone https://github.com/w0rp/ale.git ~/.vim/bundle/ale
-set runtimepath^=~/.vim/bundle/ale
-let g:ale_debug = "msg"
-let g:ale_linters = {
-  \ 'sh': ['shellcheck'] ,
-  \ 'javascript': ['eslint'],
-  \ 'cpp': ['cpplint'],
-  \ 'go': ['gofmt', 'golint', 'govet', 'gopls']
-  \ }
-let g:airline#extensions#ale#enabled = 1
+" set runtimepath^=~/.vim/bundle/ale
+" let g:ale_debug = "msg"
+" let g:ale_linters = {
+"   \ 'sh': ['shellcheck'] ,
+"   \ 'javascript': ['eslint'],
+"   \ 'cpp': ['cpplint'],
+"   \ 'go': ['gofmt', 'golint', 'govet', 'gopls'],
+"   \ 'rust': ['analyzer']
+"   \ }
+" " \ 'rust': ['rls', 'rustc', 'cargo']
+" let g:ale_fixers = {
+"   \ 'rust': ['rustfmt'],
+"   \ }
+" let g:ale_completion_enabled = 1
+" " let g:ale_rust_rls_toolchain = 'stable'
+" let g:airline#extensions#ale#enabled = 1
+" let g:ale_rust_analyzer_config = {
+" \  'server': {
+" \     'extraEnv': {
+" \        'CARGO': '/Users/deepvora/.cargo/bin/cargo'
+" \     }
+" \  }
+" \}
+" let g:ale_rust_rustfmt_options = '--edition 2018'
 " let g:ale_open_list = 1
 " let g:ale_sign_column_always = 1
 " let g:ale_sign_error = '>>'
@@ -164,6 +164,7 @@ set runtimepath^=~/.vim/bundle/vim-jsdoc
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " go configs
+let g:go_fold_enable = []
 let g:go_debug=['shell-commands']
 let g:go_def_mode='gopls'
 nmap <C-F10> :GoDebugNext<CR>¬
@@ -203,13 +204,16 @@ hi Folded ctermbg=234
 hi YcmErrorSection guibg=#000000
 
 " Custom mappings
-nmap fe :ALEFix eslint<CR>¬
-nmap fp :ALEFix prettier<CR>¬
-nmap fc :ALEFix cpplint<CR>¬
-nmap fgg :ALEFix gofmt<CR>¬
+" nmap fe :ALEFix eslint<CR>¬
+" nmap fp :ALEFix prettier<CR>¬
+" nmap fc :ALEFix cpplint<CR>¬
+" nmap fgg :ALEFix gofmt<CR>¬
+" nmap fr :ALEFix rustfmt<CR>¬
+" nmap mm :ALEToggle<CR>
+nmap fe :CocCommand eslint.executeAutofix<CR>¬
+nmap fp :CocCommand prettier.forceFormatDocument<CR>¬
 nmap sh :set hls!<CR>
 nmap sfl :set foldlevel=1<CR>
-nmap mm :ALEToggle<CR>
 nmap gj :JsDoc<CR>
 
 nnoremap <C-J> <C-W><C-J>
@@ -225,3 +229,14 @@ noremap <Leader>P "+p
 nmap ge :!clear && g++ -std=c++17 -Wshadow -Wall -D LOCAL -o ~/project/competitive_programming/a.out % -O2 -Wno-unused-result<CR>
 nmap gr :!./a.out<CR>¬
 
+" nmap cpy :%w !xclip -i -sel c<CR>¬
+" nnoremap cpy :execute has("mac") ? "!open -a terminal" : "!start cmd"
+
+" let cpy_cmd = { "LINUX": "!xclip -i -sel c", "DARWIN": "!pbcopy", "WINDOWS": "" }
+" nnoremap cpy :execute %w cpy_cmd[g:env]<CR><CR>
+"
+if g:env == "DARWIN"
+  nnoremap cpy :%w !pbcopy<CR><CR>
+else 
+  nnoremap cpy :%w !xclip -i -sel c<CR><CR>
+endif
