@@ -200,6 +200,7 @@ hi MatchParen ctermbg=245
 hi ALEWarning ctermbg=172
 hi ALEError ctermbg=124
 hi Folded ctermbg=234
+hi YcmErrorSection guibg=#000000
 
 " Custom mappings
 nmap fe :ALEFix eslint<CR>¬
